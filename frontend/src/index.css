@@ -1,0 +1,298 @@
+body {
+      font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+     
+}
+
+
+ .navbar {
+    background: transparent; 
+    background: radial-gradient( circle at top right, #16222A, #3A6073);
+    background-color: #184e8e;
+    border-radius: 0;
+    box-sizing: none;
+    border: none;
+    
+}
+
+.candidname a:hover {
+  text-decoration: none;
+  color: white;
+}
+.header-blue {
+  background: radial-gradient( circle at top right, #16222A, #3A6073);
+  background-color: #184e8e;
+  padding-bottom: 120px;
+  font-family: 'Source Sans Pro', sans-serif;
+  height: 100vh;
+}
+
+
+.bg-img {
+  /* The image used */
+  background-image: ('/images/cansara.jpg');
+
+  min-height: 380px;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  /* Needed to position the navbar */
+  position: relative;
+}
+
+
+/*Nav Styles*/
+nav a {
+  text-decoration: none;
+}
+
+nav a:hover {
+  color: white;
+}
+
+nav ul a {
+  color: lightgrey;
+}
+
+ 
+
+
+
+
+
+/* Signin Styling */
+
+.login
+ {
+  min-height: 100vh;
+}
+
+.bg-image {
+  background-image: url('/images/restaurant.jpg');
+  background-size: cover;
+  background-position: center center;
+}
+
+
+/*    Products Styling */
+.zoom {
+  padding: 50px;
+  transition: transform .2s; /* Animation */
+  margin: 0 auto;
+}
+.order-image {
+  transition: transform .2s; /* Animation */
+  margin: 0 auto;
+}
+.order-image:hover  {
+  transform: scale(1.8); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+
+
+}
+.zoom:hover {
+  transform: scale(1.5); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+  padding-bottom: 100px;
+  padding-top: 100px;
+}
+.order-color {
+  color: black !important;
+}
+/*  Register Form Validation  */
+
+
+form input {
+  width: 85%;
+  height: 30px;
+  border-radius: 200px;
+  background-color: whitesmoke;
+  color: black;
+
+
+}
+
+textarea {
+  width: 85%;
+  height: 30px;
+  border: none;
+  border-radius: 200px;
+
+
+
+}
+form  input:hover {
+  transform: scale(1.2);
+}
+
+body a {
+  text-decoration: none;
+}
+
+
+/*  Home */
+
+.containers {
+  position: relative;
+  width: 100%;
+
+}
+
+.image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color:black;
+  opacity: .7;
+  overflow: hidden;
+  width: 100%;
+  height: 0;
+  transition: .5s ease;
+}
+
+.containers:hover .overlay {
+  height: 100%;
+}
+
+.text {
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+  /*CheckoutSteps */
+    
+  .checkout-steps {
+    display: flex;
+    justify-content: space-evenly;
+    width: 60%;
+    padding-top: 20px;
+    margin: 1rem auto;
+
+}
+.checkout-steps > div {
+    border-top: .3rem #c0c0c0 solid;
+    color: #c0c0c0;
+    line-height: 30px;
+    flex: 1 1;
+   
+}
+.checkout-steps > div.active {
+    border-top: .3rem#21a9af solid;
+    color:#21a9af;
+    width: 80px;
+    line-height: 30px;
+    text-justify: center;
+}
+
+
+.footer a {
+  color: white;
+}
+
+.footer {
+  background: radial-gradient( circle at top right, #16222A, #3A6073);
+    background-color: #184e8e;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+
+
+@media only screen and (min-width: 400px) {
+  .containers {
+     width: 400px;
+     justify-content: center;
+  }
+ 
+ 
+}
+
+@media only screen and (min-width: 1090px) {
+   .candidname {
+     margin-left: 320px;
+   }
+  
+ 
+ 
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1220px ) {
+  .candidname {
+    margin-left: 100px;
+  }
+ 
+
+
+}
+@media only screen and (min-width: 767px) and (max-width: 992px ) {
+   .device {
+    padding-right: 50px;
+    padding-top: 30px;
+     max-height: 60vh;
+     width: 110vh;
+   }
+ 
+
+
+}
+
+@media only screen and (max-width: 520px) {
+  .cart-totals {
+    padding-left: 80px !important;
+  }
+  .cart-btn {
+    margin-left: 10px !important;
+    width: 50% !important;
+  }
+   form input {
+     width: 110%;
+   }
+   .placeorder {
+     width: 100%;
+   }
+ 
+}
+
+@media only screen and (max-width: 574px) {
+  form input {
+    max-width: 50vh;
+  }
+  
+}
+@media only screen and (max-width: 385px) {
+  form input {
+    max-width: 30vh;
+  }
+  
+}
+
+@media only screen and (max-width: 520px) {
+  .cart-totals {
+    padding-left: 0px !important;
+  }
+  .cart-btn {
+    margin-left: 10px !important;
+    width: 50% !important;
+  }
+   form input {
+     width: 120%;
+   }
+   
+ 
+
+
+}
+
