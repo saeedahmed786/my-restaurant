@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/static/css/main.6162959c.chunk.css",
+    "main.js": "/static/js/main.22e6ecd8.chunk.js",
+    "main.js.map": "/static/js/main.22e6ecd8.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.d99813ef.js",
+    "runtime-main.js.map": "/static/js/runtime-main.d99813ef.js.map",
+    "static/js/2.775ef49b.chunk.js": "/static/js/2.775ef49b.chunk.js",
+    "static/js/2.775ef49b.chunk.js.map": "/static/js/2.775ef49b.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.c7d3ee23471388cf8369cc4fde73ba41.js": "/precache-manifest.c7d3ee23471388cf8369cc4fde73ba41.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/main.6162959c.chunk.css.map": "/static/css/main.6162959c.chunk.css.map",
+    "static/js/2.775ef49b.chunk.js.LICENSE.txt": "/static/js/2.775ef49b.chunk.js.LICENSE.txt",
+    "static/media/bg-image.jpg": "/static/media/bg-image.3ab24fe8.jpg",
+    "static/media/cansara.jpg": "/static/media/cansara.2848091b.jpg",
+    "static/media/header-image.jpg": "/static/media/header-image.6f4661fb.jpg",
+    "static/media/iphone.jpg": "/static/media/iphone.f8219497.jpg",
+    "static/media/logo.png": "/static/media/logo.e752cf43.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.d99813ef.js",
+    "static/js/2.775ef49b.chunk.js",
+    "static/css/main.6162959c.chunk.css",
+    "static/js/main.22e6ecd8.chunk.js"
+  ]
+}
