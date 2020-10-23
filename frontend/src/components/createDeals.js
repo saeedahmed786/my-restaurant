@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react'
 import isEmpty from 'validator/lib/isEmpty';
 import { showErrormsg, showLoadingMsg } from './messages';
 
- const CreateDeals = (props) => {
+ const CreateDeals = () => {
 
 
       /********************************************* Create Deals ***********************************************
@@ -16,7 +16,6 @@ import { showErrormsg, showLoadingMsg } from './messages';
 
 
 
-    const [categories, setCategories] = useState(null);
     const [deals, setDeals] = useState('');
     const [errorMsg, setErrorMsg] = useState('');
     const [loadings, setLoadings] = useState('');
@@ -29,14 +28,12 @@ import { showErrormsg, showLoadingMsg } from './messages';
         off: '',
         id: '',
         countInStock: '',
-        productCategory: ''
        
        
     });
-    const{ name, file, priceBefore, price, off, countInStock, description, id, productCategory} = productData;
+    const{ name, file, priceBefore, price, off, countInStock, description, id} = productData;
 
     useEffect(() => {
-        loadCategories();
         getDeals();
         return () => {
             
@@ -54,8 +51,7 @@ import { showErrormsg, showLoadingMsg } from './messages';
                  isEmpty(priceBefore) ||
                  isEmpty(price) ||
                  isEmpty(description) || 
-                 isEmpty(countInStock) || 
-                 isEmpty(productCategory)) {
+                 isEmpty(countInStock)) {
             setErrorMsg('All fields are required');
         } else {
             let formData = new FormData();
@@ -66,7 +62,6 @@ import { showErrormsg, showLoadingMsg } from './messages';
             formData.append('off', off);
             formData.append('description', description);
             formData.append('countInStock', countInStock);
-            formData.append('productCategory', productCategory);
 
             setLoadings(true);
 
@@ -102,22 +97,7 @@ import { showErrormsg, showLoadingMsg } from './messages';
       * ****************************************************************************************
       * *********************************vv******************************************************************/
 
-     const getCategories = async () => {
-        const response =  await Axios.get('/api/products/categories');
-        return response;
-     }
-  
-  
-    const loadCategories = async () => {
-       await getCategories()
-       .then( response => {
-           setCategories(response.data.categories);
-          
-  
-       }).catch(err => {
-           setErrorMsg(err.response.data.err);
-       })
-    }
+    
       
      /********************************************* Load Deals ***********************************************
       * ****************************************************************************************
@@ -221,23 +201,7 @@ import { showErrormsg, showLoadingMsg } from './messages';
                     <textarea value ={description} type = 'text' id = 'description'  name ='description' onChange = { handleProductChange }></textarea><br/><br/>
                 </div>
                 <div>
-                <label>Categories</label> <br/>
-                <select name = 'productCategory' className = 'custom-select w-75 mr-sm-2' onChange = {handleProductChange}>
-                    <option value = ''>Choose one</option>
-                   
-                       {
-                        categories && categories.map( c => 
-                       {
-                          return (
-                       
-                              <option key = {c._id} value = {c._id}>
-                                {c.category}
-                            </option>
-                           
-                           )
-                        })
-                       }
-                       </select>
+               
                        
                         
                     

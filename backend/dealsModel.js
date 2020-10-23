@@ -31,13 +31,7 @@ const dealSchema = new mongoose.Schema({
     countInStock: {
         type: Number,
         required: true
-    },
-    category: {
-        type: String,
-        required: true
-        
     }
-    
    
 }, {timestamps: true}
 );

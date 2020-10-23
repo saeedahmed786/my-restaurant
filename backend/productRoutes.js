@@ -130,8 +130,7 @@ router.post('/deals', authenticatorJWT , upload.single('file') ,async (req, res)
         off: req.body.off,
         image: req.file.filename,
         countInStock: req.body.countInStock,
-        description: req.body.description,
-        category: req.body.productCategory
+        description: req.body.description
        
     });
     const newDeal = await deal.save();

@@ -9,7 +9,7 @@
   },
   "scripts": {
     "server": "nodemon backend/server.js",
-    "client": "npm start --prefix frontend ",
+    "client": "npm start --prefix ../frontend ",
     "dev": "concurrently \"npm run server\" \"npm run client\" ",
     "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false cd frontend npm install --prefix frontend && npm run build --prefix frontend"
   },
