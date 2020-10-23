@@ -25,7 +25,7 @@ function App() {
 
     <>
     <BrowserRouter>
-    <div style = {{  background: 'transparent', background: 'linear-gradient(135deg, #172a74, #21a9af)',
+    <div style = {{background: 'linear-gradient(135deg, #172a74, #21a9af)',
      backgroundColor: '#184e8e', borderRadius: '0',
   boxShadow:' none',
   border: 'none'}}>

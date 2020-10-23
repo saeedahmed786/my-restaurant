@@ -1,14 +1,11 @@
 import React, { useEffect, useState} from 'react';
 import '../index.css';
-import { useSelector, useDispatch } from 'react-redux';
-import { DetailsProducts } from '../Redux/store';
 import Axios from 'axios';
 
   const Deal = (props) => {
      const dealId = props.match.params.id
 
      const [ qty, setQty] = useState(1);
-     const dispatch = useDispatch();
      const [deal, setDeal] = useState('');
      useEffect(() => {
          getDeal(dealId)
@@ -55,7 +52,7 @@ import Axios from 'axios';
                      <h6 className = 'pb-4'  style = {{borderBottom: '1px solid black'}}>
                      
                               ${deal.price}
-                                        
+                                    
                      </h6>
                      <p>Qty: &nbsp;
                     <select value = {qty} onChange = { (e) => { setQty(e.target.value)}} className = 'mt-5'>

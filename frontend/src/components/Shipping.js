@@ -34,7 +34,7 @@ export default function Shipping(props) {
          <>
        
 
-         <div style = {{backgroundColor: 'whitesmoke'}} style = {{width: '100%'}}>
+         <div style = {{width: '100%', backgroundColor: 'whitesmoke'}}>
          <CheckoutSteps step1 step2 ></CheckoutSteps>
         <div className = 'container-fluid'> 
         <div className = ' text-center'>

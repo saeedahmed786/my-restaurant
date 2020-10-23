@@ -1,8 +1,7 @@
 import Axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import isEmpty from 'validator/lib/isEmpty';
-import { dealAddToCart } from '../Redux/store';
-import { showErrormsg, showSuccessmsg } from './messages';
+import { showErrormsg, showLoadingMsg } from './messages';
 
  const CreateDeals = (props) => {
 
@@ -11,16 +10,15 @@ import { showErrormsg, showSuccessmsg } from './messages';
       * ****************************************************************************************
       * *********************************vv******************************************************************/
        const createDeal = async (data) => {
-           const response = await Axios.post('/api/products/deals', data)
+           const response = await Axios.post('/api/products/deals', data);
+           return response;
        }
 
 
 
     const [categories, setCategories] = useState(null);
     const [deals, setDeals] = useState('');
-    const [category, setCategory] = useState('');
     const [errorMsg, setErrorMsg] = useState('');
-    const [successMsg, setSuccessMsg] = useState('');
     const [loadings, setLoadings] = useState('');
     const [productData, setProductData] = useState({
         name: '',
@@ -70,8 +68,11 @@ import { showErrormsg, showSuccessmsg } from './messages';
             formData.append('countInStock', countInStock);
             formData.append('productCategory', productCategory);
 
+            setLoadings(true);
+
             createDeal(formData).then( response => {
                 console.log(response);
+                setLoadings(false);
                 window.location.reload();
                 
                 //   setSuccessMsg(
@@ -172,13 +173,13 @@ import { showErrormsg, showSuccessmsg } from './messages';
             <div className = 'modal-content bg-dark text-white'>
             <form onSubmit = {submitHandler} enctype="multipart/form-data">
             <div className = 'modal-header bg-info'>
-                <h3 className = 'modal-title'>Create a Product</h3>
+                <h3 className = 'modal-title'>Create a Deal</h3>
                 <button className = 'close' data-dismiss = 'modal'>
                     <i className = 'fas fa-times'></i>
                 </button>
                 </div>
+                {loadings && showLoadingMsg(loadings)}
                 {errorMsg && showErrormsg(errorMsg)}
-                {successMsg && showSuccessmsg(successMsg)}
                  <div className = 'modal-body text-center mt-3'> 
                     <div className="form-group">
                     <label for="image">Image</label><br/>

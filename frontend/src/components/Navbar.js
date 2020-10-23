@@ -1,8 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import '../index.css';
 import { Link, withRouter } from 'react-router-dom';
 import { isAuthenticated, logout } from './auth';
-import { getCategories } from './Category';
 import logo  from '../images/logo.png';
 
  function Navbar(props) {
@@ -14,7 +13,7 @@ import logo  from '../images/logo.png';
         <>
         
         <nav className="navbar navbar-expand-lg h-25">
-                        <Link className="navbar-brand pl-3" to="/" style = {{color: 'white'}}><img src = {logo} style = {{width: '100px'}}/>HOLO FOOD</Link>
+                        <Link className="navbar-brand pl-3" to="/" style = {{color: 'white'}}><img src = {logo} alt = 'logo' style = {{width: '100px'}}/>HOLO FOOD</Link>
                         <button className="navbar-toggler text-light" style = {{color: 'white'}} type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                             <span className="fas fa-bars"></span>
                         </button>

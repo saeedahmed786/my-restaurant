@@ -1,13 +1,13 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
-import { addToCart, removeCartItem } from '../Redux/store';
+import { useSelector } from 'react-redux';
 import CheckoutSteps from './CheckoutSteps';
 
 export default function PlaceOrder (props) {
    
     const cart = useSelector( state => state.cart);
     const { cartItems , shipping, payment} = cart;
+
     
 
     if(!shipping) {
@@ -26,7 +26,6 @@ export default function PlaceOrder (props) {
 
 
 
-     const dispatch = useDispatch();
 
      const placeOrderHandler = () => {
          // create an order
@@ -34,15 +33,14 @@ export default function PlaceOrder (props) {
    
 
     useEffect(() => {
+        
        
         return () => {
             
         }
     }, [])
 
-    const checkoutHandler = () => {
-        props.history.push('/signin?redirect=shipping')
-    }
+   
 
 
   

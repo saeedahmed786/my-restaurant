@@ -1,21 +1,20 @@
 import React, { useEffect, useState} from 'react';
 import '../index.css';
 import { useSelector, useDispatch } from 'react-redux';
-import { saveProduct, listProducts, deleteProduct, deleteCategory } from '../Redux/store';
+import {  listProducts, deleteProduct, deleteCategory } from '../Redux/store';
 import axios from 'axios';
 import isEmpty from 'validator/lib/isEmpty';
 import { showErrormsg, showLoadingMsg, showSuccessmsg } from './messages';
-import { Link, Redirect } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { createProduct } from './CreateProduct';
 import CreateDeals from './createDeals';
 
   const CreateProduct = (props) => {
 
     
-    const [modalVisible, setModalVisible] = useState(false);
     const [categories, setCategories] = useState(null);
     const productsList = useSelector(state => state.productsList);
-    const { products, error} = productsList;
+    const { products} = productsList;
     const [category, setCategory] = useState('');
     const [errorMsg, setErrorMsg] = useState('');
     const [successMsg, setSuccessMsg] = useState('');
@@ -34,11 +33,6 @@ import CreateDeals from './createDeals';
     });
     const{ name, file, price, countInStock, description, id, productCategory} = productData;
 
-    const productSave = useSelector( state => state.productSave);
-    const { loading: loadingSave, success: successSave, error: errorSave} = productSave;
-
-    const productDelete = useSelector( state => state.productDelete);
-    const { loading: loadingDelete, success: successDelete, error: errorDelete} = productDelete;
 
     
     

@@ -1,10 +1,10 @@
 import React, {  useState } from 'react'
-import { Link, Redirect } from 'react-router-dom';
+import { Link, } from 'react-router-dom';
 import { showErrormsg, showLoadingMsg, showSuccessmsg } from './messages';
 import isEmail from 'validator/lib/isEmail';
 import isEmpty from 'validator/lib/isEmpty';
 import Axios from 'axios';
-import { isAuthenticated, setAuthentication } from './auth';
+import { setAuthentication } from './auth';
 
 export default function Signin(props) {
       

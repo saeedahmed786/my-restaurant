@@ -1,7 +1,6 @@
-import React, { useEffect, useState} from 'react';
+import React, { useState} from 'react';
 import '../index.css';
-import { Link } from 'react-router-dom';
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { savePayment } from '../Redux/store';
 import CheckoutSteps from './CheckoutSteps';
 

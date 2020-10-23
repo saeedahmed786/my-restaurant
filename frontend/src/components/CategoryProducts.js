@@ -1,11 +1,10 @@
-import React, { Component, useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Axios from 'axios';
-import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { showErrormsg } from './messages';
 
 
  const CategoryProducts = (props) =>  {
-    const [successMsg, setSuccessMsg] = useState('');
     const [categories, setCategories] = useState([]);
     const [errorMsg, setErrorMsg] = useState('');
     const [products, setProducts] = useState([]);
@@ -13,7 +12,6 @@ import { Link } from 'react-router-dom';
 
     
   
-        const dispatch = useDispatch();
 
         useEffect(() => {
             loadCategories();
@@ -57,7 +55,7 @@ import { Link } from 'react-router-dom';
         <>
         <div className = 'container-fluid'>
         <div className = 'row'>
-            <div className = 'col-md-3 col-lg-3 border' style = {{  background: 'transparent', background: 'radial-gradient( circle at top right, #16222A, #3A6073)', borderRadius: '0',
+            <div className = 'col-md-3 col-lg-3 border' style = {{background: 'radial-gradient( circle at top right, #16222A, #3A6073)', borderRadius: '0',
   boxShadow:' none',
   border: 'none'}}>
 
@@ -74,6 +72,9 @@ import { Link } from 'react-router-dom';
                  </ul>
                  )
              })
+         }
+         {
+             errorMsg && showErrormsg(errorMsg)
          }
         
          </div>

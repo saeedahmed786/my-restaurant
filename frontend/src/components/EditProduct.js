@@ -1,8 +1,5 @@
 import Axios from 'axios';
 import React, { useEffect, useState } from 'react'
-import { useDispatch } from 'react-redux';
-import isEmpty from 'validator/lib/isEmpty';
-import { saveProduct } from '../Redux/store';
 import { showErrormsg, showSuccessmsg } from './messages';
 
 export default function EditProduct(props) {
@@ -10,8 +7,6 @@ export default function EditProduct(props) {
     const [categories, setCategories] = useState(null);
     const [successMsg, setSuccessMsg] = useState('');
     const [errorMsg, setErrorMsg] = useState('');
-    const [category, setCategory] = useState('');
-
     const [product, setProduct] = useState({
         name: '',
         file: '',
@@ -32,7 +27,6 @@ export default function EditProduct(props) {
         return response;
     }
 
-    const dispatch = useDispatch('');
 
     useEffect(() => {
         loadCategories();

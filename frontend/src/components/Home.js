@@ -2,16 +2,11 @@ import React, { useEffect } from 'react'
 import { Link } from 'react-router-dom/cjs/react-router-dom.min';
 import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
-import background0 from '../images/bg-image.jpg';
-import background1 from '../images/header-image.jpg';
-import background2 from '../images/cansara.jpg';
 import { listProducts } from '../Redux/store';
 import '../index.css';
 import iphone from '../images/iphone.jpg';
-import Navbar from './Navbar';
 import Deals from './getDeals';
-import { isAuthenticated, logout } from './auth';
- function Home(props) {
+ function Home() {
     
     const productsList = useSelector(state => state.productsList);
     const { products, error, loading } = productsList;
@@ -44,7 +39,7 @@ import { isAuthenticated, logout } from './auth';
                     </div>
                     <div className="col-lg-5 col-lg-offset-0 col-md-5 col-md-offset-1 d-none d-lg-block d-md-block phone-holder ml-5">
                         <div className="iphone-mockup">
-                        <img src={iphone} className="device img-fluid" style = {{ height: '400px', marginTop: '60px', marginLeft: '80px'}}/>
+                        <img src={iphone} alt = 'restaurant' className="device img-fluid" style = {{ height: '400px', marginTop: '60px', marginLeft: '80px'}}/>
                             <div className="screen"></div>
                         </div>
                     </div>

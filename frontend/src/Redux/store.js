@@ -33,8 +33,6 @@
    const CATEGORY_DELETE_SUCCESS = 'CATEGORY_DELETE_SUCCESS';
    const CATEGORY_DELETE_FAIL = 'CATEGORY_DELETE_FAIL';
    const CART_SAVE_SHIPPING = 'CART_SAVE_SHIPPING';
-   const CART_ADD_DEAL = 'CART_ADD_DEAL';
-   const CART_REMOVE_DEAL = 'CART_REMOVE_DEAL';
    const CART_SAVE_PAYMENT = 'CART_SAVE_PAYMENT';
 
  
@@ -100,24 +98,7 @@ const productDeleteReducer = (state = { product: {}}, action) => {
 
 }
 
-const categoryDeleteReducer = (state = { cat: {}}, action) => {
-    switch(action.type) {
-        case CATEGORY_DELETE_REQUEST: return {
-            loading: true
-        };
-        case CATEGORY_DELETE_SUCCESS: return {
-            loading: false,
-            cat: action.payload,
-            success: true
-        };
-        case CATEGORY_DELETE_FAIL: return {
-            loading: false,
-            error: action.payload
-        };
-        default: return state
-    }
 
-}
 
 
 
